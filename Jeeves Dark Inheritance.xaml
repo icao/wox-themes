@@ -1,0 +1,93 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Themes/Base.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- <system:Boolean x:Key="ThemeBlurEnabled">True</system:Boolean> -->
+
+    <Style x:Key="QueryBoxStyle" BasedOn="{StaticResource BaseQueryBoxStyle}" TargetType="{x:Type TextBox}">
+        <!-- BUSQUEDA QUERY -->
+        <Setter Property="Foreground" Value="{x:Static SystemParameters.WindowGlassBrush}"/>
+        <Setter Property="CaretBrush" Value="{x:Static SystemParameters.WindowGlassBrush}"/>
+    </Style>
+
+    <Style x:Key="QueryTextSuggestionBoxStyle" BasedOn="{StaticResource BaseQueryTextSuggestionBoxStyle}" TargetType="{x:Type TextBox}">
+        <!-- COLOR DE BACKGROUND DEL INPUT DE BUSQUEDA -->
+        <Setter Property="Foreground" Value="#8e99b1"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="WindowBorderStyle" BasedOn="{StaticResource BaseWindowBorderStyle}" TargetType="{x:Type Border}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <!-- COLOR DE BACKGROUND DE TODO -->
+                <SolidColorBrush Color="#141414" Opacity="0.6"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Window.Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="#141414" ShadowDepth="0" BlurRadius="16"/>
+            </Setter.Value>
+        </Setter>
+        <!-- COLOR DE BORDE DE LANZADOR -->
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{x:Static SystemParameters.WindowGlassBrush}"/>
+    </Style>
+
+    <Style x:Key="WindowStyle" BasedOn="{StaticResource BaseWindowStyle}" TargetType="{x:Type Window}">
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="PendingLineStyle" BasedOn="{StaticResource BasePendingLineStyle}" TargetType="{x:Type Line}">
+        <Setter Property="Stroke" Value="{x:Static SystemParameters.WindowGlassBrush}"/>
+    </Style>
+
+    <!-- Item Style -->
+    <Style x:Key="ItemTitleStyle" BasedOn="{StaticResource BaseItemTitleStyle}" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="0, -10"/>
+        <!-- COLOR DE CONCIDENCIA SELECCION DE QUERY EN LA LISTA DE RESULTADOS -->
+        <Setter Property="Foreground" Value="#d1dfff"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    <Style x:Key="ItemSubTitleStyle" BasedOn="{StaticResource BaseItemSubTitleStyle}" TargetType="{x:Type TextBlock}">
+        <!-- COLOR DE DIRECCION DE APLICACION EN LA LISTA DE RESULTADOS-->
+        <Setter Property="Foreground" Value="#8e99b1"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="ItemTitleSelectedStyle" BasedOn="{StaticResource BaseItemTitleSelectedStyle}" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="0, -10"/>
+        <!-- COLOR DE RESULTADO NOMBRE APLICACION SELECCIONADO -->
+        <Setter Property="Foreground" Value="#d1dfff"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    <Style x:Key="ItemSubTitleSelectedStyle" BasedOn="{StaticResource BaseItemSubTitleSelectedStyle}" TargetType="{x:Type TextBlock}">
+        <!-- COLOR DE DIRECCION(SELECCIONADA) DE APLICACION EN LA LISTA DE RESULTADOS-->
+        <Setter Property="Foreground" Value="{x:Static SystemColors.HighlightTextBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    <!-- CONCIDENCIA DE QUERY EN LA LISTA DE RESULTADOS -->
+    <SolidColorBrush x:Key="ItemHighlightColor" Color="{x:Static SystemParameters.WindowGlassColor}"/>
+
+    <!-- CONCIDENCIA DE QUERY SELECICONADO EN LA LISTA -->
+    <SolidColorBrush x:Key="ItemSelectedHighlightColor">#ffffff</SolidColorBrush>
+    <!-- COLOR DE BACKGROUND DE ITEM EL LA LISTA DE RESULTADOS -->
+    <SolidColorBrush x:Key="ItemSelectedBackgroundColor" Color="{x:Static SystemParameters.WindowGlassColor}" Opacity="1"/>
+    <!-- button style in the middle of the scrollbar -->
+    <Style x:Key="ThumbStyle" BasedOn="{StaticResource BaseThumbStyle}" TargetType="{x:Type Thumb}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border CornerRadius="2" DockPanel.Dock="Right" Background="{x:Static SystemParameters.WindowGlassBrush}" BorderBrush="Transparent" BorderThickness="0" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ScrollBarStyle" BasedOn="{StaticResource BaseScrollBarStyle}" TargetType="{x:Type ScrollBar}">
+    </Style>
+</ResourceDictionary>
